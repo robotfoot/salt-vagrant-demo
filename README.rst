@@ -4,6 +4,8 @@ Salt Vagrant Demo
 
 A Salt Demo using Vagrant.
 
+https://docs.saltstack.com/en/getstarted/fundamentals/index.html
+
 
 Instructions
 ============

@@ -34,6 +34,13 @@ using Salt.
 .. code-block:: bash
 
     vagrant ssh master
+
+    # when running salt commands on master, must be sudo
+    sudo su
+    
+    # List all keys submitted by minions
+    salt-key --list-all
+
     sudo salt \* test.ping
 
     # Run commands and states on all minions

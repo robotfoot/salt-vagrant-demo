@@ -65,3 +65,5 @@ using Salt.
 
     # run mysql_secure_installation on minion2
     # visit http://192.168.50.11/ to see apache2 on minion1
+
+    # Show how detailed you can make states https://github.com/AppThemes/salt-config-example

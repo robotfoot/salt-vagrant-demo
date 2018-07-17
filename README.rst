@@ -33,3 +33,35 @@ using Salt.
 
     vagrant ssh master
     sudo salt \* test.ping
+
+    # Run commands and states on all minions
+    # (The states below are shipped with saltstack)
+
+    # Run an arbitrary shell cmd
+    salt '*' cmd.run 'ls -l /etc'
+    
+    # Run the disk.usage state
+    salt '*' disk.usage
+    
+    # Run the pkg.install state with one arg, cowsay
+    salt '*' pkg.install cowsay
+    
+    # Run the network.interfaces state
+    salt '*' network.interfaces
+
+    # different ways to target minions (servers) under control
+    salt 'minion1' disk.usage
+    salt 'minion*' disk.usage
+    salt -G 'os:Ubuntu' test.ping
+    salt -E 'minion[0-9]' test.ping
+    salt -L 'minion1,minion2' test.ping
+
+    # Apply the custom nettools state on minion2
+    salt 'minion2' state.apply nettools
+
+    # Update your top.sls file and highstate
+    salt '*' state.apply
+    salt 'minion1' state.apply
+
+    # run mysql_secure_installation on minion2
+    # visit http://192.168.50.11/ to see apache2 on minion1
